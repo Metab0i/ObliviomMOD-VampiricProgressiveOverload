@@ -188,6 +188,8 @@ If ( PCVampire >= 1 )
 		Player.addspell Vampire75AbsorptionLevel20
 		Player.addspell Vampire100AbsorptionLevel20
 
+;		Remove all sun-damage
+
 ;		ProgressiveVampirism: Stage1 Powers/Spells END
 
 		if showyouarefed == 1
@@ -238,6 +240,11 @@ elseif ( PCVampire == 3 )
 		Player.addspell Vampirism75Att
 		Player.addspell Vampirism75Skills
 		Player.addspell VampireReignofTerror
+
+;		Sun Damage
+;			Check Level
+;				Set Sun Damage based on level
+
 		set randomdream to GetRandomPercent
 	endif
 elseif ( PCVampire == 4 )
@@ -249,6 +256,11 @@ elseif ( PCVampire == 4 )
 		Player.addspell Vampirism100Att
 		Player.addspell Vampirism100Skills
 		Player.addspell VampireEmbraceofShadows
+
+;		Sun Damage
+;			Check Level
+;				Set Sun Damage based on level 
+
 		if ( VampMetabolicAcceleratorCasted == 0 )
 			set randomdream to GetRandomPercent	
 		else
