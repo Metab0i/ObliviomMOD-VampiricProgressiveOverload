@@ -17,6 +17,9 @@ Progression Mechanics:
 - [25-100]:
     - Intelligence = Magnitude: 15-0{Decreasing with progressing stages}
     - Agility = Magnitude 5-20{Increasing with progressing stages}
+    - Personality = Magnitude 15-8-0[Vamp25-Vamp75]
+- [100]:
+    - Drain Personality = Magnitude 8
 
 *Vampirism25-100Skill {An additional mechanic} 
 - [25-100]:
@@ -33,16 +36,17 @@ Progression Mechanics:
 *VampirismExtraAttLevel[2-20] {Add at every level, but increase at Every Even Level}:
 - Fortify Strength = Magnitude: 1-12;
 - Fortify Willpower = Magnitude: 1-10;
-- Fortify Speed = Magnitude: 1-11 
+- Fortify Speed = Magnitude: 1-9
+- Fortify Agility = Magnitude: 1-12;
 
 *VampirismExtraSkillsLevel[1-19] {Add at every level, but increase at Every Odd Level}:
-- Fortify Acrobatics = Magnitude: 1-12;
+- Fortify Acrobatics = Magnitude: 1-15;
 - Fortify Athletics = Magnitude: 1-15;
-- Fortify Destruction = Magnitude: 1-10;
-- Fortify Hand-to-Hand = 1-20;
+- Fortify Destruction = Magnitude: 1-12;
+- Fortify Hand-to-Hand = 1-15;
 - Fortify Illusion = 1-13;
 - Fortify Mysticism = 1-12;
-- Fortify Sneak = 1-12
+- Fortify Sneak = 1-13
     
 4 Ranks:
     - Fledgling Vampire (1-8)
