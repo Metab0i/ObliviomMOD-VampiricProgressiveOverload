@@ -1,0 +1,15 @@
+scriptname VampMetabolicAccelerator
+
+Begin ScriptEffectStart
+    ;Nothing to do at the start of the spell
+End
+
+Begin ScriptEffectUpdate
+    set PCVampire to 4
+    set VampStageUpdate to 0
+    set VampMetabolicAcceleratorCasted to 1
+End
+
+Begin ScriptEffectFinish
+    MessageBox "In an instant, insatiable hunger possesses you whole.."
+End

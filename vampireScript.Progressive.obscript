@@ -1,0 +1,341 @@
+Scriptname VampireScript
+
+short hasdisease
+short currentday
+short daycount
+short randomdream
+short doonce
+
+float fQuestDelayTime
+
+begin gamemode
+
+if ( doonce == 0 )
+	set randomdream to -1
+	set fQuestDelayTime to 0.5
+	set doonce to 1
+endif
+
+;Cured of vampirism, cannot become vampire again
+if ( PCVampire == -1 )
+	return
+endif
+
+
+;SCRIPTING FOR ACQUIRING VAMPIRISM
+;---------------------------------------------------------------------------------------------------------------------
+
+If ( hasdisease == 0 )
+	if ( Player.IsSpellTarget VampDisease == 1 )
+		set hasdisease to 1
+	endif
+endif
+
+;If player has been cured of disease, reset 'hasdisease' var
+if ( hasdisease == 1 )
+	if ( Player.IsSpellTarget VampDisease == 0 )
+		set hasdisease to 0
+	endif
+endif
+
+if ( hasdisease == 1 )
+	if ( currentday == 0 )
+		set currentday to GameDay
+	else
+		if currentday != gameday
+			set daycount to ( daycount + 1 )
+			set currentday to GameDay
+		endif
+	endif
+endif
+
+;If hasdisease still == 1, this is the first time the player has been in this state
+;give him introductory messagebox (TEMP) and reset hasdisease var
+if ( PCVampire == 1 )
+	if ( hasdisease == 1 )
+		if ( GetPCIsSex Male == 1 )
+			Messagebox "You dream of someone sleeping peacefully in their bed, when a shadowy, gaunt figure silently enters the room. Approaching the bed, the figure leans down and sinks its fangs into the sleeping person. After a few moments, the pale figure rises, blood dripping down his chin. As color flows back into the vampire's face, and his features fill out, you recognize the face as your own. You awake screaming."
+		else
+			Messagebox "You dream of someone sleeping peacefully in their bed, when a shadowy, gaunt figure silently enters the room. Approaching the bed, the figure leans down and sinks its fangs into the sleeping person. After a few moments, the pale figure rises, blood dripping down her chin. As color flows back into the vampire's face, and her features fill out, you recognize the face as your own. You awake screaming."
+		endif
+		set hasdisease to -1
+		player.addspell Vampirism25
+		Player.addspell Vampirism25Att
+		Player.addspell Vampirism25Skills
+		Player.addspell VampireHuntersSight
+		player.removespell VampDisease
+		player.setfactionrank playervampirefaction 0
+		addtopic CureforVampirism
+		StartQuest MS40
+		set LastFedVampDay to GameDay
+		set LastFedVampHour to GameHour
+	endif
+endif
+
+;SCRIPTING FOR STATE CHANGES AS A VAMPIRE
+;--------------------------------------------------------------------------------------------------------------------
+
+;First things first. If player has fed, reset Vampirism level to 25 and start the counters over again
+If ( PCVampire >= 1 )
+	if ( Player.HasVampireFed == 1 )
+		
+;		ProgressiveVampirism: Level-up Logic
+		if ( PCVampire > 3 )
+			if ( Player.getav vampirism == 100 )
+				Message "I made it 123"
+				if ( VampireLevel < 20 )
+					Message "I made it further!"
+					set VampireLevel to ( VampireLevel + 1 )
+
+					if ( VampireLevel == 1 )
+						Message "LEVELING UPPPP"
+						MessageBox "Vampire Leveled Up 1"
+
+					elseif ( VampireLevel == 2 )
+						MessageBox "Vampire Leveled Up 2"
+
+					elseif ( VampireLevel == 3 )
+						MessageBox "Vampire Leveled Up 3"
+
+					elseif ( VampireLevel == 4 )
+						MessageBox "Vampire Leveled Up 4"
+
+					elseif ( VampireLevel == 5 )
+						MessageBox "Vampire Leveled Up 5"
+
+					elseif ( VampireLevel == 6 )
+						MessageBox "Vampire Leveled Up 6"
+
+					elseif ( VampireLevel == 7 )
+						MessageBox "Vampire Leveled Up 7"
+
+					elseif ( VampireLevel == 8 )
+						MessageBox "Vampire Leveled Up 8"
+
+					elseif ( VampireLevel == 9 )
+						MessageBox "Vampire Leveled Up 9"
+
+					elseif ( VampireLevel == 10 )
+						MessageBox "Vampire Leveled Up 10"
+
+					elseif ( VampireLevel == 11 )
+						MessageBox "Vampire Leveled Up 11"
+
+					elseif ( VampireLevel == 12 )
+						MessageBox "Vampire Leveled Up 12"
+
+					elseif ( VampireLevel == 13 )
+						MessageBox "Vampire Leveled Up 13"
+
+					elseif ( VampireLevel == 14 )
+						MessageBox "Vampire Leveled Up 14"
+
+					elseif ( VampireLevel == 15 )
+						MessageBox "Vampire Leveled Up 15"
+
+					elseif ( VampireLevel == 16 )
+						MessageBox "Vampire Leveled Up 16"
+
+					elseif ( VampireLevel == 17 )
+						MessageBox "Vampire Leveled Up 17"
+
+					elseif ( VampireLevel == 18 )
+						MessageBox "Vampire Leveled Up 18"
+
+					elseif ( VampireLevel == 19 )
+						MessageBox "Vampire Leveled Up 19"
+
+					elseif ( VampireLevel == 20 )
+						MessageBox "Vampire Leveled Up 20"
+					endif
+				endif
+			endif
+		endif
+;		ProgressiveVampirism: Level-up Logic END
+
+		Set PCVampire to 1
+
+;		remove any spell from higher states
+		Player.removespell Vampirism50
+		Player.removespell Vampirism50Att
+		Player.removespell Vampirism50Skills
+		Player.removespell VampireSeduction
+		Player.removespell Vampirism75
+		Player.removespell Vampirism75Att
+		Player.removespell Vampirism75Skills
+		Player.removespell VampireReignofTerror
+		Player.removespell Vampirism100
+		Player.removespell Vampirism100Att
+		Player.removespell Vampirism100Skills
+		Player.removespell VampireEmbraceofShadows
+
+;		re-add state 1 spells
+		Player.addspell Vampirism25
+		Player.addspell Vampirism25Att
+		Player.addspell Vampirism25Skills
+		set LastFedVampDay to GameDay
+		set LastFedVampHour to GameHour
+
+;		ProgressiveVampirism: Stage1 Powers/Spells
+
+;		Should have an if statement eventually checking VampireLevel, for now this is a test
+		Player.addspell VampMetabolicAcceleratorSpell
+		Player.addspell VampireTransparencyLevel10
+		Player.addspell Vampire50AbsorptionLevel20
+		Player.addspell Vampire75AbsorptionLevel20
+		Player.addspell Vampire100AbsorptionLevel20
+
+;		ProgressiveVampirism: Stage1 Powers/Spells END
+
+		MessageBox "Your hunger for blood has been satisfied... for now."
+	endif
+endif
+
+
+;Run a timer, checking for 24 hour intervals. If 24 hours have passed, increment VampStageUpdate and reset hour/day vars
+if ( PCVampire >= 1 )
+;	if It's not the same day as last feeding
+	if ( LastFedVampDay != GameDay ) 
+;		If the hour at which feeding(LastFedVampHour) took place(e.g 20) is less than the current hour of the day (22), then 24hrs have elapsed, enter the block
+		if ( ( LastFedVampHour + 1 ) < GameHour ) 
+			set VampStageUpdate to 1
+			set LastFedVampDay to GameDay
+			set LastFedVampHour to GameHour
+		elseif ( LastFedVampHour >= 23 )
+			if ( LastFedVampDay + 1 < Gameday )
+				set VampStageUpdate to 1
+				set LastFedVampDay to Gameday
+				set LastFedVampHour to GameHour
+			endif
+		endif
+	endif
+endif
+
+
+;When VampireState doesn't match Vampirism Effect, update effects
+if ( PCVampire == 2 )
+	if ( Player.getav vampirism == 25 )
+		Player.removespell Vampirism25
+		Player.removespell Vampirism25Att
+		Player.removespell Vampirism25Skills
+		Player.addspell Vampirism50
+		Player.addspell Vampirism50Att
+		Player.addspell Vampirism50Skills
+		Player.addspell VampireSeduction
+		set randomdream to GetRandomPercent
+	endif
+elseif ( PCVampire == 3 )
+	if ( Player.getav vampirism == 50 )
+		Player.removespell Vampirism50
+		Player.removespell Vampirism50Att
+		Player.removespell Vampirism50Skills
+		Player.addspell Vampirism75
+		Player.addspell Vampirism75Att
+		Player.addspell Vampirism75Skills
+		Player.addspell VampireReignofTerror
+		set randomdream to GetRandomPercent
+	endif
+elseif ( PCVampire == 4 )
+	if ( Player.getav Vampirism == 75 || VampMetabolicAcceleratorCasted == 1)
+		Player.removespell Vampirism75
+		Player.removespell Vampirism75Att
+		Player.removespell Vampirism75Skills
+		Player.Addspell Vampirism100
+		Player.addspell Vampirism100Att
+		Player.addspell Vampirism100Skills
+		Player.addspell VampireEmbraceofShadows
+		if ( VampMetabolicAcceleratorCasted == 0)
+			set randomdream to GetRandomPercent	
+		else
+			set VampMetabolicAcceleratorCasted to 0
+			Player.removespell Vampirism25
+			Player.removespell Vampirism25Att
+			Player.removespell Vampirism25Skills
+			Player.removespell Vampirism50
+			Player.removespell Vampirism50Att
+			Player.removespell Vampirism50Skills
+		endif
+	endif
+endif
+
+
+;Pick dream text based on randomdream var
+if ( randomdream >= 0 )
+	if ( randomdream <= 9 )
+		MessageBox "You dream of long days spent basking in the sunlight of your native lands. You feel the warmth and the heat, and feel your body become refreshed. Then you awaken, knowing it was but a dream."
+		set randomdream to -1
+	elseif ( randomdream <= 19 )
+		MessageBox "In your dream, you see a beautiful young woman holding an infant to her breast. It is only as you draw near that you realize that the woman is a desiccated corpse and the child is purple and bloated, dying of plague. As mother and child crumble to dust, you awaken. "
+		set randomdream to -1
+	elseif ( randomdream <= 29 )
+		MessageBox "In your dream, an old wise-woman treats you for burns on your hands. As she applies a salve to your skin, you feel the tingle of magic as the pain begins to subside. But as you watch, the flesh of your hands begins to bubble, crack, and split, falling in chunks to the floor of her hut. As the wise-woman smiles, you wake up."
+		set randomdream to -1
+	elseif ( randomdream <= 39 )
+		MessageBox "In a dream from your childhood you remember playing hiding games with your young friends on a warm summer afternoon. You hide in your parents’ barn, sure you will not be found. Soon, the sweet smell of hay is replaced by a darker, sickly smell. You move deeper into the barn, only to stumble on the rotting corpses of your parents, their throats ripped out. You try to scream as your parents rise and pull you into an embrace."
+		set randomdream to -1
+	elseif ( randomdream <= 49 )
+		MessageBox "You dream of a sumptuous banquet spread out before you. You feast on a particularly choice cut of roasted meat, and its aroma makes your mouth water. It is only as you cut into the last portion that you see the larvae squirming inside. You cough blood as the larvae begin eating their way out of your stomach."
+		set randomdream to -1
+	elseif ( randomdream <= 59 )
+		MessageBox "You lay on your back, with a blissful feeling of peace swirling through your brain. Your every muscle is relaxed. There is no tension in any part of your body. You feel completely at ease. As your vision comes into focus, you notice others standing around you. As a man leans towards you, you recognize the robes of the Necromancer, and you see a glint of light from his scalpel as it begins to cut through your flesh."
+		set randomdream to -1
+	elseif ( randomdream <= 69 )
+		MessageBox "A warm, gentle breeze causes a tickle on your face, but as you go to brush it off, you find you cannot move your arms. Looking at your skin, you realize that it has turned to a brittle, green glass. Standing perfectly still, you breathe in shallow gulps of air, knowing that moving would cause your skin to shatter into thousands of pieces. The tickle on your face worsens, and you know that you are about to sneeze. As your skin shatters, you wake up sweating."
+		set randomdream to -1
+	elseif ( randomdream <= 79 )
+		MessageBox "In your dream, you open your eyes to a beautiful blue sky. The sun is bright, but you feel cool, even a bit damp. You draw a breath but begin to cough, as you expel blood and dirt that you’ve inhaled into your lungs. As you try to draw another, you see a shovel of dirt being emptied onto your face. The sunlight grows fainter as you view it through the soil that covers your body. You would scream, but your mouth fills with dirt before you can make a sound."
+		set randomdream to -1
+	elseif ( randomdream <= 89 )
+		MessageBox "In your dream, you approach a vampire ancient. Having just completed a perilous task for him, you swell with pride, sure that he will now bestow even greater power upon you. The entire clan’s eyes are upon you. Walking towards the dais where he stands, you realize that your task for him is actually unfinished, and that all of your vampiric powers have left you. You cry out as the clan descends upon you, and the ancient’s fangs rip into the flesh of your throat."
+		set randomdream to -1
+	elseif ( randomdream <= 99 )
+		MessageBox "You dream of walking through the cool night air. Your body cries for blood, having not fed for days. Weakly, you stumble to a small pool. As you bend down to it, you see that it is not water in the pool, but warm, fresh blood, steam rising off of it. You lower your head to drink, but cannot open your mouth. As you realize in horror that your lips have been sewn shut,  a pair of cold, white hands reach out from the pool and draw you under."
+		set randomdream to -1
+	endif
+endif
+
+End
+
+
+
+
+
+Begin MenuMode
+
+;If player is resting after 3 days with disease, increment PCVampire and wake 'im up
+if ( hasdisease == 1 )
+	if ( currentday == 0 )
+		set currentday to GameDay
+	else
+		if ( currentday != gameday )
+			set daycount to ( daycount + 1 )
+			set currentday to GameDay
+		endif
+	endif
+endif
+
+;Initiate Vampirism 3days after contracting the disease 
+if ( hasdisease == 1 )
+	if ( daycount >= 3 )
+		if ( IsPCSleeping == 1 )
+			WakeUpPC	
+			set PCVampire to 1
+		endif
+	endif
+endif
+
+;If player is ready for state change, check for time passing and increment PCVampire
+if ( PCVampire >= 1 )
+	if ( PCVampire < 4 )
+		if ( VampStageUpdate == 1 )
+			if ( IsTimePassing == 1 )
+				set PCVampire to ( PCVampire + 1 )
+				set VampStageUpdate to 0
+				set LastFedVampDay to GameDay
+				set LastFedVampHour to GameHour			
+			endif
+		endif
+	endif
+endif
+
+End
