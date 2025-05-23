@@ -78,75 +78,75 @@ endif
 ;First things first. If player has fed, reset Vampirism level to 25 and start the counters over again
 If ( PCVampire >= 1 )
 	if ( Player.HasVampireFed == 1 )
-		
+		short showyouarefed
+		set showyouarefed to 1
+
 ;		ProgressiveVampirism: Level-up Logic
 		if ( PCVampire > 3 )
 			if ( Player.getav vampirism == 100 )
-				Message "I made it 123"
 				if ( VampireLevel < 20 )
-					Message "I made it further!"
 					set VampireLevel to ( VampireLevel + 1 )
 
 					if ( VampireLevel == 1 )
-						Message "LEVELING UPPPP"
-						MessageBox "Vampire Leveled Up 1"
+						set showyouarefed to -1
+						MessageBox "You can feel yourself change.. As a result of enduring starvation, you grew stronger. You are now Fledgling Vampire"
 
 					elseif ( VampireLevel == 2 )
-						MessageBox "Vampire Leveled Up 2"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 3 )
-						MessageBox "Vampire Leveled Up 3"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 4 )
-						MessageBox "Vampire Leveled Up 4"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 5 )
-						MessageBox "Vampire Leveled Up 5"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 6 )
-						MessageBox "Vampire Leveled Up 6"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 7 )
-						MessageBox "Vampire Leveled Up 7"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 8 )
-						MessageBox "Vampire Leveled Up 8"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 9 )
-						MessageBox "Vampire Leveled Up 9"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 10 )
-						MessageBox "Vampire Leveled Up 10"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 11 )
-						MessageBox "Vampire Leveled Up 11"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 12 )
-						MessageBox "Vampire Leveled Up 12"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 13 )
-						MessageBox "Vampire Leveled Up 13"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 14 )
-						MessageBox "Vampire Leveled Up 14"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 15 )
-						MessageBox "Vampire Leveled Up 15"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 16 )
-						MessageBox "Vampire Leveled Up 16"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 17 )
-						MessageBox "Vampire Leveled Up 17"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 18 )
-						MessageBox "Vampire Leveled Up 18"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 19 )
-						MessageBox "Vampire Leveled Up 19"
+						Message "Your power grows.."
 
 					elseif ( VampireLevel == 20 )
-						MessageBox "Vampire Leveled Up 20"
+						Message "Your power grows.."
 					endif
 				endif
 			endif
@@ -187,14 +187,16 @@ If ( PCVampire >= 1 )
 
 ;		ProgressiveVampirism: Stage1 Powers/Spells END
 
-		MessageBox "Your hunger for blood has been satisfied... for now."
+		if showyouarefed == 1
+			MessageBox "Your hunger for blood has been satisfied... for now."
+		endif
 	endif
 endif
 
 
 ;Run a timer, checking for 24 hour intervals. If 24 hours have passed, increment VampStageUpdate and reset hour/day vars
 if ( PCVampire >= 1 )
-;	if It's not the same day as last feeding
+;	if It's not the same day as last feeding day
 	if ( LastFedVampDay != GameDay ) 
 ;		If the hour at which feeding(LastFedVampHour) took place(e.g 20) is less than the current hour of the day (22), then 24hrs have elapsed, enter the block
 		if ( ( LastFedVampHour + 1 ) < GameHour ) 
@@ -240,7 +242,6 @@ elseif ( PCVampire == 4 )
 		Player.removespell Vampirism75
 		Player.removespell Vampirism75Att
 		Player.removespell Vampirism75Skills
-		Player.removespell VampMetabolicAcceleratorSpell
 		Player.addspell Vampirism100
 		Player.addspell Vampirism100Att
 		Player.addspell Vampirism100Skills

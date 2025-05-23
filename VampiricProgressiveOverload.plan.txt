@@ -77,3 +77,14 @@ New Globals:
 - LastFedVampDay(Simple check, all we care about is that it's not the same day as before);
 - VampStageUpdate(0- not a time for Vampire Stage update, 1- time for Vampire Stage update);
 - VampMetabolicAcceleratorCasted(0- not casted; 1- casted);
+
+
+TODO:
+- Write out Prompts for Each Milestone level-up
+- Reconsider a mod name.. "ProgressiveVampirism"
+    - Vampiric Progression
+    - Vampirism: Progressive Overload
+    - Vampiric Progressive Overload *
+- Add new Dreams
+- Metabolic Acceleration, find a way to make it sound more vampiric or some shit
+    - Undead Metabolic Acceleration?
