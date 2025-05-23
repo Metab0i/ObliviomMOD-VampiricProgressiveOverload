@@ -236,24 +236,25 @@ elseif ( PCVampire == 3 )
 		set randomdream to GetRandomPercent
 	endif
 elseif ( PCVampire == 4 )
-	if ( Player.getav Vampirism == 75 || VampMetabolicAcceleratorCasted == 1)
+	if ( Player.getav Vampirism == 75 || VampMetabolicAcceleratorCasted == 1 )
 		Player.removespell Vampirism75
 		Player.removespell Vampirism75Att
 		Player.removespell Vampirism75Skills
-		Player.Addspell Vampirism100
+		Player.removespell VampMetabolicAcceleratorSpell
+		Player.addspell Vampirism100
 		Player.addspell Vampirism100Att
 		Player.addspell Vampirism100Skills
 		Player.addspell VampireEmbraceofShadows
-		if ( VampMetabolicAcceleratorCasted == 0)
+		if ( VampMetabolicAcceleratorCasted == 0 )
 			set randomdream to GetRandomPercent	
 		else
-			set VampMetabolicAcceleratorCasted to 0
 			Player.removespell Vampirism25
 			Player.removespell Vampirism25Att
 			Player.removespell Vampirism25Skills
 			Player.removespell Vampirism50
 			Player.removespell Vampirism50Att
 			Player.removespell Vampirism50Skills
+			set VampMetabolicAcceleratorCasted to 0
 		endif
 	endif
 endif
