@@ -89,64 +89,67 @@ If ( PCVampire >= 1 )
 
 					if ( VampireLevel == 1 )
 						set showyouarefed to -1
-						MessageBox "You can feel yourself change.. As a result of enduring starvation, you grew stronger. You are now Fledgling Vampire"
+						MessageBox "You can feel yourself change.. As a result of enduring starvation, you grew stronger. You are now Fledgling Vampire."
 
 					elseif ( VampireLevel == 2 )
-						Message "Your power grows.."
+						Message "Your power grows..", 8
 
 					elseif ( VampireLevel == 3 )
-						Message "Your power grows.."
+						Message "You can feel yourself growing stronger..", 8
 
 					elseif ( VampireLevel == 4 )
-						Message "Your power grows.."
+						Message "With each drink, you get stronger..", 8
 
 					elseif ( VampireLevel == 5 )
-						Message "Your power grows.."
+						Message "You can feel yourself developing into something more..", 8
 
 					elseif ( VampireLevel == 6 )
-						Message "Your power grows.."
+						Message "Greater power is coursing through you now..", 8
 
 					elseif ( VampireLevel == 7 )
-						Message "Your power grows.."
+						Message "Something greater faintly stirs in you..", 8
 
 					elseif ( VampireLevel == 8 )
-						Message "Your power grows.."
+						set showyouarefed to -1
+						MessageBox "Violation of others in their most vulnerable allowed you to ascend further. You are now Callous Vampire."
 
 					elseif ( VampireLevel == 9 )
-						Message "Your power grows.."
+						Message "Hunger is satiatied, but not your ambition..", 8
 
 					elseif ( VampireLevel == 10 )
-						Message "Your power grows.."
+						Message "Blood of another flows into you, nourishing your growth..", 8
 
 					elseif ( VampireLevel == 11 )
-						Message "Your power grows.."
+						Message "Faster, Stronger, More..", 8
 
 					elseif ( VampireLevel == 12 )
-						Message "Your power grows.."
+						Message "You can feel blood of another pouring through to your viscera, feeding your strength..", 8
 
 					elseif ( VampireLevel == 13 )
-						Message "Your power grows.."
+						Message "Sweet flavours of blood are melting all over your tongue, coating your mouth, filling you with strength..", 8
 
 					elseif ( VampireLevel == 14 )
-						Message "Your power grows.."
+						Message "A step closer to fulfilling your desire for more power..", 8
 
 					elseif ( VampireLevel == 15 )
-						Message "Your power grows.."
+						set showyouarefed to -1
+						MessageBox "You have become intimately familiar with power that comes from your condition. Blood of your victims nourishes and crystallizes lessons you've learned in battle; However, there's more to become. You are now Harrowing Vampire."
 
 					elseif ( VampireLevel == 16 )
-						Message "Your power grows.."
+						Message "Blood fuels your change..", 8
 
 					elseif ( VampireLevel == 17 )
-						Message "Your power grows.."
+						Message "Stolen essense of another fulfills you..", 8
 
 					elseif ( VampireLevel == 18 )
-						Message "Your power grows.."
+						Message "Starvation, hunt, and subsequent success..", 8
 
 					elseif ( VampireLevel == 19 )
-						Message "Your power grows.."
+						Message "It's within your reach..", 8
 
 					elseif ( VampireLevel == 20 )
-						Message "Your power grows.."
+						set showyouarefed to -1
+						MessageBox "Vampirism is instinctive to you, it's as if you were born as such. Being anything else is a vague, distant sensation now. You've attained mastery over your condition. Many have been slain by your hands and fangs, and you briefly ponder your entire journey on the way here. However, blood-stained sweet memories are interrupted by a subtle growing sensation.. of hunger. Hunger as undying as you. You are now Master Vampire."
 					endif
 				endif
 			endif

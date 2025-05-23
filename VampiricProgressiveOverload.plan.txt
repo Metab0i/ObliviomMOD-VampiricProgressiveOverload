@@ -85,10 +85,7 @@ New Globals:
 
 TODO:
 - Write out Prompts for Each Milestone level-up
-- Reconsider a mod name.. "ProgressiveVampirism"
-    - Vampiric Progression
-    - Vampirism: Progressive Overload
-    - Vampiric Progressive Overload *
 - Add new Dreams
 - Metabolic Acceleration, find a way to make it sound more vampiric or some shit
     - Undead Metabolic Acceleration?
+- Fix spelling errors "Vampiric Absor*b*tion"

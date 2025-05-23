@@ -11,5 +11,5 @@ Begin ScriptEffectUpdate
 End
 
 Begin ScriptEffectFinish
-    MessageBox "In an instant, insatiable hunger possesses you whole.."
+    MessageBox "In an instant, seemingly insatiable hunger possesses you whole.."
 End
