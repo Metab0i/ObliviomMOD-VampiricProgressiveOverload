@@ -136,7 +136,7 @@ CS Spell Name - `VampirismExtraSkillsLevel[1-19]`
 
 * `VampirismExtraAttLevel`[20]
 * `VampirismExtraSkillsLevel`[19]
-* `VampirismExtraWR`[10]
+* `VampirismExtraWR`[10 + 3]
 * `VampirismExtraSunDamage`:
   * Vamp75 = 12
   * Vamp100 = 15
