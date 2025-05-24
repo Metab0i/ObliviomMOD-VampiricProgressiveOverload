@@ -133,7 +133,7 @@ If ( PCVampire >= 1 )
 
 					elseif ( VampireLevel == 15 )
 						set showyouarefed to -1
-						MessageBox "You have become intimately familiar with power that comes from your condition. Blood of your victims nourishes and crystallizes lessons you've learned in battle; However, there's more to become. You are now Harrowing Vampire."
+						MessageBox "You have become intimately familiar with power that comes from your condition. Blood of your victims nourished you and crystallized lessons you had learned in battle; However, there's more to become. You are now Harrowing Vampire"
 
 					elseif ( VampireLevel == 16 )
 						Message "Blood fuels your change..", 8
