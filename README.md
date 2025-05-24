@@ -219,5 +219,18 @@ elseif ( VampireLevel == 20 )
 
 
 ## TODO
-
+* When Undead Metabolic Acceleration is cast at stage 4 vampirism, make sure script doesn't do anything, and message informs player that nothing happened 
+  * ORRRR, to make things VERY interesting, it just kills your ass, lol
+* Level-Up attributes added and removed appropriately
+  * If you feel like attributes and skills level-ups are lacking, could always retain the last upgrade set of atts and skills of each rank
+    * E.g. 
+      Lvl 1 = Att & Skills & Normal Weapon Resistance added;    
+      Lvl 2 = remove lvl1 A&S&NWR add lvl2 A&S&NWR;    
+      Lvl 3 = remove lvl1 and lvl2 A&S, add lvl3 A&S&NWR;   
+       ...;   
+      Lvl10 RANK LEVEL = remove lvl1,2,3,4,5,6,7,8 BUT NOT 9 A&S&NWR, add lvl10 A&S;   
+      ...;   
+    * Why remove all previous levels at each lvl? Just to make sure if there's some oddity with lvling, everything is taken care of
+* Sun Damage
+  * At stages 75 and 100, check level and add corresponding sun damage
 * Add new Dreams
