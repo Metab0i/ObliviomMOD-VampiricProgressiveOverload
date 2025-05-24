@@ -9,11 +9,13 @@ Oblivion(Remastered) Vampirism System Re-Imagined
 
 \~ Each feeding from **'Stage 4'** vampirism back to **'Stage 1'** increments **`VampireLevel`** by 1   
 
-\~ A total of **20 levels**   
+\~ A total of **20 levels** 
 
-\~ Each Level **improves**, for some **maintains**, Attributes and Skills that Vampirism already amplifies   
+\~ **Each Level** *amplifies* specific Attributes and Skills, as well as provides additional effects    
 
-\~ Adds new skills, attributes, and effects to baseline Vampirism stages
+\~ Adds new skills, attributes, and effects to Vampiric Hunger stages
+
+\~ Adds new Powers
 
 
 ## Spell -> Power
@@ -70,7 +72,7 @@ It made sense to me that as Vampire progresses and becomes *more* of a Vampire, 
 ## Level-Up Mechanic: Additional Normal Weapons Resistance
 CS Spell Name - `VampirismExtraWR[1-10]`
 
-Vampire Character would gain +1 `Resistance to Normal Weapons` every even level until level 20.
+Vampire Character would gain +1 `Resistance to Normal Weapons` every even level until level 20; At level 20 on top +10 `Resistance to Normal Weapons`, PC gains additional +3.
 
 ## Level-Up Mechanic: Attributes
 CS Spell Name - `VampirismExtraAttLevel[2-20]` 
@@ -97,24 +99,24 @@ CS Spell Name - `VampirismExtraSkillsLevel[1-19]`
 
 # Vampire Ranks
 
-* **Fledgling Vampire:** Level 1–8
-* **Callous Vampire:** Level 9–15
-* **Harrowing Vampire:** Level 16–19
-* **Master Vampire:** Level 20
+* **Fledgling Vampire:** Vamp Level 1–8
+* **Callous Vampire:** Vamp Level 9–15
+* **Harrowing Vampire:** Vamp Level 16–19
+* **Master Vampire:** Vamp Level 20
 
 
 ## Fledgling Vampire (1–8)
 
 * `VampirismExtraAttLevel`[2, 4, 6, 8]
 * `VampirismExtraSkillsLevel`[1, 3, 5, 7]
-* `VampirismExtraWR`[1, 2, 3]
+* `VampirismExtraWR`[1, 2, 3, 4]
 
 
 ## Callous Vampire (9–15)
 
 * `VampirismExtraAttLevel`[10, 12, 14]
 * `VampirismExtraSkillsLevel`[9, 11, 13]
-* `VampirismExtraWR`[4, 5, 6]
+* `VampirismExtraWR`[5, 6, 7]
 * `VampirismExtraSunDamage`:
   * Vamp75 = 3, 6
   * Vamp100 = 9
@@ -124,7 +126,7 @@ CS Spell Name - `VampirismExtraSkillsLevel[1-19]`
 
 * `VampirismExtraAttLevel`[16, 18]
 * `VampirismExtraSkillsLevel`[15, 17]
-* `VampirismExtraWR`[7, 8, 9]
+* `VampirismExtraWR`[8, 9]
 * `VampirismExtraSunDamage`:
   * Vamp75 = 9
   * Vamp100 = 12
@@ -221,16 +223,6 @@ elseif ( VampireLevel == 20 )
 ## TODO
 * When Undead Metabolic Acceleration is cast at stage 4 vampirism, make sure script doesn't do anything, and message informs player that nothing happened 
   * ORRRR, to make things VERY interesting, it just kills your ass, lol
-* Level-Up attributes added and removed appropriately
-  * If you feel like attributes and skills level-ups are lacking, could always retain the last upgrade set of atts and skills of each rank
-    * E.g. 
-      Lvl 1 = Att & Skills & Normal Weapon Resistance added;    
-      Lvl 2 = remove lvl1 A&S&NWR add lvl2 A&S&NWR;    
-      Lvl 3 = remove lvl1 and lvl2 A&S, add lvl3 A&S&NWR;   
-       ...;   
-      Lvl10 RANK LEVEL = remove lvl1,2,3,4,5,6,7,8 BUT NOT 9 A&S&NWR, add lvl10 A&S;   
-      ...;   
-    * Why remove all previous levels at each lvl? Just to make sure if there's some oddity with lvling, everything is taken care of
 * Sun Damage
   * At stages 75 and 100, check level and add corresponding sun damage
 * Add new Dreams
