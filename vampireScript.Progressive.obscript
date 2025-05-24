@@ -96,22 +96,28 @@ If ( PCVampire >= 1 )
 						MessageBox "You can feel yourself change.. As a result of enduring starvation, you grew stronger. You are now Fledgling Vampire."
 
 					elseif ( VampireLevel == 2 )
+						set showyouarefed to -1
+
 ;						Attributes
 						Player.addspell VampirismExtraAttLevel2
 
 ;						Normal Weapon Resistance
 						Player.addspell VampirismExtraWR1
 
-						Message "Your power grows..", 8
+						MessageBox "Your power grows.."
 
 					elseif ( VampireLevel == 3 )
+						set showyouarefed to -1
+
 ;						Skills
 						Player.removespell VampirismExtraSkillsLevel1
 						player.addspell VampirismExtraSkillsLevel3
 
-						Message "You can feel yourself growing stronger..", 8
+						MessageBox "You can feel yourself growing stronger.."
 
 					elseif ( VampireLevel == 4 )
+						set showyouarefed to -1
+
 ;						Attributes
 						Player.removespell VampirismExtraAttLevel2
 						Player.addspell VampirismExtraAttLevel4
@@ -120,17 +126,21 @@ If ( PCVampire >= 1 )
 						Player.removespell VampirismExtraWR1
 						Player.addspell VampirismExtraWR2
 
-						Message "With each drink, you get stronger..", 8
+						MessageBox "With each drink, you get stronger.."
 
 					elseif ( VampireLevel == 5 )
+						set showyouarefed to -1
+
 ;						Skills
 						Player.removespell VampirismExtraSkillsLevel1
 						Player.removespell VampirismExtraSkillsLevel3
 						Player.addspell VampirismExtraSkillsLevel5
 
-						Message "You can feel yourself developing into something more..", 8
+						MessageBox "You can feel yourself developing into something more.."
 
 					elseif ( VampireLevel == 6 )
+						set showyouarefed to -1
+
 ;						Attributes
 						Player.removespell VampirismExtraAttLevel2
 						Player.removespell VampirismExtraAttLevel4
@@ -141,18 +151,22 @@ If ( PCVampire >= 1 )
 						Player.removespell VampirismExtraWR2
 						Player.addspell VampirismExtraWR3
 
-						Message "Greater power is coursing through you now..", 8
+						MessageBox "Greater power is coursing through you now.."
 
 					elseif ( VampireLevel == 7 )
+						set showyouarefed to -1
+
 ;						Skills
 						Player.removespell VampirismExtraSkillsLevel1
 						Player.removespell VampirismExtraSkillsLevel3
 						Player.removespell VampirismExtraSkillsLevel5
 						Player.addspell VampirismExtraSkillsLevel7
 
-						Message "Something greater faintly stirs in you..", 8
+						MessageBox "Hunger is satiatied, but not your ambition.."
 
 					elseif ( VampireLevel == 8 )
+						set showyouarefed to -1
+
 ;						Attributes
 						Player.removespell VampirismExtraAttLevel2
 						Player.removespell VampirismExtraAttLevel4
@@ -165,25 +179,36 @@ If ( PCVampire >= 1 )
 						Player.removespell VampirismExtraWR3
 						Player.addspell VampirismExtraWR4
 
-						set showyouarefed to -1
-						MessageBox "Violation of others in their most vulnerable allowed you to ascend further. You are now Callous Vampire."
-
+						MessageBox "Something greater faintly stirs in you.."
+						
 					elseif ( VampireLevel == 9 )
-;						Skills - Retaining Skill increase at lvl 7
+						set showyouarefed to -1
+
+;						Attributes
+						Player.removespell VampirismExtraAttLevel2
+						Player.removespell VampirismExtraAttLevel4
+						Player.removespell VampirismExtraAttLevel6
+						Player.removespell VampirismExtraAttLevel8
+						Player.addspell VampirismExtraAttLevel9
+
+;						Skills
 						Player.removespell VampirismExtraSkillsLevel1
 						Player.removespell VampirismExtraSkillsLevel3
 						Player.removespell VampirismExtraSkillsLevel5
 						Player.removespell VampirismExtraSkillsLevel7
 						Player.addSpell VampirismExtraSkillsLevel9
 
-						Message "Hunger is satiatied, but not your ambition..", 8
+						MessageBox "Violation of others in their most vulnerable allowed you to ascend further. You are now Callous Vampire."
 
 					elseif ( VampireLevel == 10 )
-;						Attributes - Retaining Att increase at lvl 8
+						set showyouarefed to -1
+
+;						Attributes
 						Player.removespell VampirismExtraAttLevel2
 						Player.removespell VampirismExtraAttLevel4
 						Player.removespell VampirismExtraAttLevel6
 						Player.removespell VampirismExtraAttLevel8
+						Player.removespell VampirismExtraAttLevel9
 						Player.addspell VampirismExtraAttLevel10
 
 ;						Normal Weapons Resistance
@@ -193,9 +218,11 @@ If ( PCVampire >= 1 )
 						Player.removespell VampirismExtraWR4
 						Player.addspell VampirismExtraWR5
 
-						Message "Blood of another flows into you, nourishing your growth..", 8
+						MessageBox "Blood of another flows into you, nourishing your growth.."
 
 					elseif ( VampireLevel == 11 )
+						set showyouarefed to -1
+
 ;						Skills
 						Player.removespell VampirismExtraSkillsLevel1
 						Player.removespell VampirismExtraSkillsLevel3
@@ -204,14 +231,17 @@ If ( PCVampire >= 1 )
 						Player.removespell VampirismExtraSkillsLevel9
 						Player.addspell VampirismExtraSkillsLevel11
 
-						Message "Faster, Stronger, More..", 8
+						MessageBox "Faster, Stronger, More.."
 
 					elseif ( VampireLevel == 12 )
+						set showyouarefed to -1
+
 ;						Attributes
 						Player.removespell VampirismExtraAttLevel2
 						Player.removespell VampirismExtraAttLevel4
 						Player.removespell VampirismExtraAttLevel6
 						Player.removespell VampirismExtraAttLevel8
+						Player.removespell VampirismExtraAttLevel9
 						Player.removespell VampirismExtraAttLevel10
 						Player.addspell VampirismExtraAttLevel12
 
@@ -223,9 +253,11 @@ If ( PCVampire >= 1 )
 						Player.removespell VampirismExtraWR5
 						Player.addspell VampirismExtraWR6
 
-						Message "You can feel blood of another pouring through to your viscera, feeding your strength..", 8
+						MessageBox "You can feel blood of another pouring through to your viscera, feeding your strength.."
 
 					elseif ( VampireLevel == 13 )
+						set showyouarefed to -1
+
 ;						Skills
 						Player.removespell VampirismExtraSkillsLevel1
 						Player.removespell VampirismExtraSkillsLevel3
@@ -235,14 +267,17 @@ If ( PCVampire >= 1 )
 						Player.removespell VampirismExtraSkillsLevel11
 						Player.addspell VampirismExtraSkillsLevel13
 
-						Message "Sweet flavours of blood are melting all over your tongue, coating your mouth, filling you with strength..", 8
+						MessageBox "Sweet flavours of blood are melting all over your tongue, coating your mouth, filling you with strength.."
 
 					elseif ( VampireLevel == 14 )
+						set showyouarefed to -1
+
 ;						Attributes
 						Player.removespell VampirismExtraAttLevel2
 						Player.removespell VampirismExtraAttLevel4
 						Player.removespell VampirismExtraAttLevel6
 						Player.removespell VampirismExtraAttLevel8
+						Player.removespell VampirismExtraAttLevel9
 						Player.removespell VampirismExtraAttLevel10
 						Player.removespell VampirismExtraAttLevel12
 						Player.addspell VampirismExtraAttLevel14
@@ -256,9 +291,11 @@ If ( PCVampire >= 1 )
 						Player.removespell VampirismExtraWR6
 						Player.addspell VampirismExtraWR7
 
-						Message "A step closer to fulfilling your desire for more power..", 8
+						MessageBox "Blood fuels your change.."
 
 					elseif ( VampireLevel == 15 )
+						set showyouarefed to -1
+
 ;						Skills
 						Player.removespell VampirismExtraSkillsLevel1
 						Player.removespell VampirismExtraSkillsLevel3
@@ -269,15 +306,28 @@ If ( PCVampire >= 1 )
 						Player.removespell VampirismExtraSkillsLevel13
 						Player.addspell VampirismExtraSkillsLevel15
 
-						set showyouarefed to -1
-						MessageBox "You have become intimately familiar with power that comes from your condition. Blood of your victims nourished you and crystallized lessons you had learned in battle. However, there's more to become. You are now Harrowing Vampire"
-
+						MessageBox "A step closer to fulfilling your desire for more power.."
+				
 					elseif ( VampireLevel == 16 )
+						set showyouarefed to -1
+
+;						Skills
+						Player.removespell VampirismExtraSkillsLevel1
+						Player.removespell VampirismExtraSkillsLevel3
+						Player.removespell VampirismExtraSkillsLevel5
+						Player.removespell VampirismExtraSkillsLevel7
+						Player.removespell VampirismExtraSkillsLevel9
+						Player.removespell VampirismExtraSkillsLevel11
+						Player.removespell VampirismExtraSkillsLevel13
+						Player.removespell VampirismExtraSkillsLevel15
+						Player.addspell VampirismExtraSkillsLevel16
+
 ;						Attributes
 						Player.removespell VampirismExtraAttLevel2
 						Player.removespell VampirismExtraAttLevel4
 						Player.removespell VampirismExtraAttLevel6
 						Player.removespell VampirismExtraAttLevel8
+						Player.removespell VampirismExtraAttLevel9
 						Player.removespell VampirismExtraAttLevel10
 						Player.removespell VampirismExtraAttLevel12
 						Player.removespell VampirismExtraAttLevel14
@@ -293,9 +343,11 @@ If ( PCVampire >= 1 )
 						Player.removespell VampirismExtraWR7
 						Player.addspell VampirismExtraWR8
 
-						Message "Blood fuels your change..", 8
+						MessageBox "You have become intimately familiar with power that comes from your condition. Blood of your victims nourished you and crystallized lessons you had learned in battle. However, there's more to become. You are now Harrowing Vampire"
 
 					elseif ( VampireLevel == 17 )
+						set showyouarefed to -1
+
 ;						Skills
 						Player.removespell VampirismExtraSkillsLevel1
 						Player.removespell VampirismExtraSkillsLevel3
@@ -305,16 +357,20 @@ If ( PCVampire >= 1 )
 						Player.removespell VampirismExtraSkillsLevel11
 						Player.removespell VampirismExtraSkillsLevel13
 						Player.removespell VampirismExtraSkillsLevel15
+						Player.removespell VampirismExtraSkillsLevel16
 						Player.addspell VampirismExtraSkillsLevel17
 
-						Message "Stolen essense of another fulfills you..", 8
+						MessageBox "Stolen essense of another fulfills you.."
 
 					elseif ( VampireLevel == 18 )
+						set showyouarefed to -1
+
 ;						Attributes
 						Player.removespell VampirismExtraAttLevel2
 						Player.removespell VampirismExtraAttLevel4
 						Player.removespell VampirismExtraAttLevel6
 						Player.removespell VampirismExtraAttLevel8
+						Player.removespell VampirismExtraAttLevel9
 						Player.removespell VampirismExtraAttLevel10
 						Player.removespell VampirismExtraAttLevel12
 						Player.removespell VampirismExtraAttLevel14
@@ -332,9 +388,11 @@ If ( PCVampire >= 1 )
 						Player.removespell VampirismExtraWR8
 						Player.addspell VampirismExtraWR9
 
-						Message "Starvation, hunt, and subsequent success..", 8
+						MessageBox "Starvation, hunt, and subsequent success.."
 
 					elseif ( VampireLevel == 19 )
+						set showyouarefed to -1
+
 ;						Skills
 						Player.removespell VampirismExtraSkillsLevel1
 						Player.removespell VampirismExtraSkillsLevel3
@@ -344,23 +402,41 @@ If ( PCVampire >= 1 )
 						Player.removespell VampirismExtraSkillsLevel11
 						Player.removespell VampirismExtraSkillsLevel13
 						Player.removespell VampirismExtraSkillsLevel15
+						Player.removespell VampirismExtraSkillsLevel16
 						Player.removespell VampirismExtraSkillsLevel17
 						Player.addspell VampirismExtraSkillsLevel19
 
-						Message "It's within your reach..", 8
+						MessageBox "It's within your reach.."
 
 					elseif ( VampireLevel == 20 )
+						set showyouarefed to -1
+
 ;						Attributes
 						Player.removespell VampirismExtraAttLevel2
 						Player.removespell VampirismExtraAttLevel4
 						Player.removespell VampirismExtraAttLevel6
 						Player.removespell VampirismExtraAttLevel8
+						Player.removespell VampirismExtraAttLevel9
 						Player.removespell VampirismExtraAttLevel10
 						Player.removespell VampirismExtraAttLevel12
 						Player.removespell VampirismExtraAttLevel14
 						Player.removespell VampirismExtraAttLevel16
 						Player.removespell VampirismExtraAttLevel18
 						Player.addspell VampirismExtraAttLevel20
+
+;						Skills
+						Player.removespell VampirismExtraSkillsLevel1
+						Player.removespell VampirismExtraSkillsLevel3
+						Player.removespell VampirismExtraSkillsLevel5
+						Player.removespell VampirismExtraSkillsLevel7
+						Player.removespell VampirismExtraSkillsLevel9
+						Player.removespell VampirismExtraSkillsLevel11
+						Player.removespell VampirismExtraSkillsLevel13
+						Player.removespell VampirismExtraSkillsLevel15
+						Player.removespell VampirismExtraSkillsLevel16
+						Player.removespell VampirismExtraSkillsLevel17
+						Player.removespell VampirismExtraSkillsLevel19
+						Player.addspell VampirismExtraSkillsLevel20
 
 ;						Normal Weapons Resistance
 						Player.removespell VampirismExtraWR1
@@ -373,9 +449,8 @@ If ( PCVampire >= 1 )
 						Player.removespell VampirismExtraWR8
 						Player.removespell VampirismExtraWR9
 						Player.addspell VampirismExtraWR10
-						Player.addspell VampirismExtraWR5
+						Player.addspell VampirismExtraWR3
 
-						set showyouarefed to -1
 						MessageBox "Vampirism is instinctive to you, it's as if you were born as such. Being anything else is a vague, distant sensation now. You've attained mastery over your condition. Many have been slain by your hands and fangs, and you briefly ponder your entire journey on the way here. However, blood-stained sweet memories are interrupted by a subtle growing sensation.. of hunger. Hunger as undying as you. You are now Master Vampire."
 					endif
 				endif
