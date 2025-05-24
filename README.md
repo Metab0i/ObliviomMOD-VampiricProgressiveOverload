@@ -11,11 +11,17 @@ Oblivion(Remastered) Vampirism System Re-Imagined
 
 \~ A total of **20 levels** 
 
-\~ **Each Level** *amplifies* specific Attributes and Skills, as well as provides additional effects    
+\~ **Each Level** *amplifies* specific Attributes and Skills, as well as provides additional effects 
 
-\~ Adds new skills, attributes, and effects to Vampiric Hunger stages
+\~ Adds *Water Breathing* at all Stages of Vampirism 
 
-\~ Adds new Powers
+\~ Adds 10pts Spell Absorption at Stage 4 Vampirism. Read further for more details
+
+\~ Adds new skills, attributes, and effects to Vampiric Hunger stages. Read further for more details
+
+\~ Adds new Powers as PC levels up their Vampire
+
+\~ Adds a new mechanic of "*Undead Metabolic Acceleration*". Read further for more details
 
 
 ## Spell -> Power
@@ -25,8 +31,13 @@ Oblivion(Remastered) Vampirism System Re-Imagined
 | Vampire50AbsorptionLevel20 | Vampiric Absorption | Absorb Health 150pts, Absorb Fatigue 150pts | Level 20 | 50 |
 | Vampire75AbsorptionLevel20 | Vampiric Absorption | Absorb Health 200pts, Absorb Fatigue 200pts | Level 20 | 75 |
 | Vampire100AbsorptionLevel20 | Vampiric Absorption | Absorb Health 250pts, Absorb Fatigue 250pts | Level 20 | 100 |
-| VampireTransparencyLevel10 | Subtle Persence | Chameleon 65%, Speed 35pts, Sneak 15pts | Level 8 | 50,75,100 |
-| VampMetabolicAcceleratorSpell | Undead Metabolic Acceleration | Allows PC to immediately get to stage 4 Vampirism | Level 10 | 25,50,75,100 |
+| VampireTransparencyLevel10 | Subtle Persence | Chameleon 65%, Speed 35pts, Sneak 15pts | Level 16 | 25,50,75,100 |
+| VampMetabolicAcceleratorSpell | Undead Metabolic Acceleration | Allows PC to immediately get to stage 4 Vampirism | Level 9 | 25,50,75,100 |
+
+### Undead Metabolic Acceleration
+
+This mechanic provides player with a way of reaching Stage 4 Vampirism, and associated benefits, in a spell-cast.    
+In vanila - players had to wait for up to 96 seconds to reach stage 4 vampirism. In my opinion, it disrupted the pace of the game, so I thought of a lore-friendly QoL mechanic to aleviate this.    
 
 ## Changes to CS Properties Vampirism25-100
 
@@ -221,8 +232,10 @@ elseif ( VampireLevel == 20 )
 
 
 ## TODO
-* When Undead Metabolic Acceleration is cast at stage 4 vampirism, make sure script doesn't do anything, and message informs player that nothing happened 
-  * ORRRR, to make things VERY interesting, it just kills your ass, lol
+* When Undead Metabolic Acceleration is cast at stage 4 vampirism, to make things VERY interesting, it just kills you, lol
+* Make sure that everything is handled and removed properly once vampirism is cured
+* Powers 
+  * Add at proper levels and stages, ref the doc
 * Sun Damage
   * At stages 75 and 100, check level and add corresponding sun damage
 * Add new Dreams
