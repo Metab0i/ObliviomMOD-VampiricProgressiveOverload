@@ -221,4 +221,3 @@ elseif ( VampireLevel == 20 )
 ## TODO
 
 * Add new Dreams
-* Fix spelling errors: `"Vampiric Absor*b*tion"`
