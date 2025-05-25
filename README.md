@@ -31,11 +31,12 @@ Oblivion(Remastered) Vampirism System Re-Imagined
 | Vampire50AbsorptionLevel20 | Vampiric Absorption | Absorb Health 150pts, Absorb Fatigue 150pts | Level 20 | 50 |
 | Vampire75AbsorptionLevel20 | Vampiric Absorption | Absorb Health 200pts, Absorb Fatigue 200pts | Level 20 | 75 |
 | Vampire100AbsorptionLevel20 | Vampiric Absorption | Absorb Health 250pts, Absorb Fatigue 250pts | Level 20 | 100 |
-| VampireCreatureThrallLevel16 | Creature Thrall | Dominate Creature Level 65 for 60 seconds | Level 16 | 25,50 |
-| VampireHumanoidThrallLevel20 | Humanoid Thrall | Dominate Humanoid Level 65 for 60 seconds | Level 20 | 25 |
+| VampireCreatureThrallLevel16 | Creature Thrall | Dominate Creature 65pts for 60 seconds | Level 16 | 25,50 |
+| VampireHumanoidThrallLevel20 | Humanoid Thrall | Dominate Humanoid 65pts for 60 seconds | Level 20 | 25 |
 | VampireTransparencyLevel10 | Subtle Persence | Chameleon 65%, Speed 35pts, Sneak 15pts | Level 16 | 25,50,75,100 |
-| VampMetabolicAcceleratorSpell | Undead Metabolic Acceleration | Allows PC to immediately get to stage 4 Vampirism | Level 9 | 25,50,75,100 |
+| VampMetabolicAcceleratorSpell | Undead Metabolic Acceleration | Allows PC to immediately get to stage 4 Vampirism | Level 5 | 25,50,75,100 |
 | VampireSeduction | Vampire's Seduction | Charm 50 increased to 90 | Level 0 | Available at 25,50; No longer Available at 75,100 |
+| VampireReignofTerror | Reign of Terror | Demoralize 25 increased to 60; Silence - Area 20pts | Level 0 | 100 |
 
 ### Undead Metabolic Acceleration
 
@@ -82,6 +83,14 @@ CS Spell Name - `VampirismExtraSunDamage[DMGVALUE]` *(From Lvl 10 to 20)*
 | Master Vampire | 0 | 0 | 12 | 15 |
 
 It made sense to me that as Vampire progresses and becomes *more* of a Vampire, they'd get more Sun-Damage. Keeps things interesting.
+
+| Sun Damage CS Spell->Ability Name | In-Game Name | Sun Damage pts |
+| :---: | :---: | :---: |
+| VampirismExtraSunDamage3 | Vampiric Sun Frailty | 3pts | 
+| VampirismExtraSunDamage6 | Vampiric Sun Indisposition | 6pts |
+| VampirismExtraSunDamage9 | Vampiric Sun Weakness | 9pts |
+| VampirismExtraSunDamage12 | Vampiric Sun Debility | 12pts |
+| VampirismExtraSunDamage15 | Vampiric Sun Sickness | 15pts |
 
 ## Level-Up Mechanic: Additional Normal Weapons Resistance
 CS Spell Name - `VampirismExtraWR[1-10]`
@@ -184,7 +193,7 @@ elseif ( VampireLevel == 4 )
   "With each drink, you get stronger.." 
 
 elseif ( VampireLevel == 5 )
-  "You can feel yourself developing into something more.." 
+  "You can feel yourself developing into something more, attaining greater control over your condition.."
 
 elseif ( VampireLevel == 6 )
   "Greater power is coursing through you now.." 
@@ -235,6 +244,5 @@ elseif ( VampireLevel == 20 )
 
 
 ## TODO
-* When Undead Metabolic Acceleration is cast at stage 4 vampirism, to make things VERY interesting, it just kills you, lol
 * Make sure that everything is handled and removed properly once vampirism is cured
 * Add new Dreams

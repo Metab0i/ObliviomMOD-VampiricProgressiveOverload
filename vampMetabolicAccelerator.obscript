@@ -1,15 +1,23 @@
 scriptname VampMetabolicAccelerator
 
 Begin ScriptEffectStart
-    ;Nothing to do at the start of the spell
+;   Nothing to do at the start of the spell
 End
 
 Begin ScriptEffectUpdate
-    set PCVampire to 4
-    set VampStageUpdate to 0
-    set VampMetabolicAcceleratorCasted to 1
+;   Nothing to do during
 End
 
 Begin ScriptEffectFinish
-    MessageBox "In an instant, seemingly insatiable hunger possesses you whole.."
+    if ( PCVampire < 4 )
+        MessageBox "In an instant, seemingly insatiable hunger possesses you whole.."
+
+        set PCVampire to 4
+        set VampStageUpdate to 0
+        set VampMetabolicAcceleratorCasted to 1
+    else
+        MessageBox "You accelarate your metabolism whilst your body is emaciated, causing it to self-cannibalize.. prepare to die a painful death."
+        
+        Player.addspell VampireMetabolicCannibalismDeath
+    endif
 End

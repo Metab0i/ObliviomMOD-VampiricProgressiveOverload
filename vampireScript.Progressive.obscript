@@ -136,7 +136,7 @@ If ( PCVampire >= 1 )
 						Player.removespell VampirismExtraSkillsLevel3
 						Player.addspell VampirismExtraSkillsLevel5
 
-						MessageBox "You can feel yourself developing into something more.."
+						MessageBox "You can feel yourself developing into something more, attaining greater control over your condition.."
 
 					elseif ( VampireLevel == 6 )
 						set showyouarefed to -1
@@ -482,27 +482,23 @@ If ( PCVampire >= 1 )
 		set LastFedVampHour to GameHour
 
 ;		VampiricProgressiveOverload: Stage1 Powers/Spells
-;		TEST
-		Player.addspell VampMetabolicAcceleratorSpell
-;		TESTEND
+
 		Player.addspell VampireSeduction
 
-		if ( VampireLevel >= 9 )
-;			Won't be added again if PC already has it, this function will just return 0 https://cs.uesp.net/wiki/AddSpell
-;			Player.addspell VampMetabolicAcceleratorSpell
+;		Remove all sun-damage
+		Player.removespell VampirismExtraSunDamage3
+		Player.removespell VampirismExtraSunDamage6
+		Player.removespell VampirismExtraSunDamage9
+		Player.removespell VampirismExtraSunDamage12
+		Player.removespell VampirismExtraSunDamage15
 
-;			Remove all sun-damage
-			Player.removespell VampirismExtraSunDamage3
-			Player.removespell VampirismExtraSunDamage6
-			Player.removespell VampirismExtraSunDamage9
-			Player.removespell VampirismExtraSunDamage12
-			Player.removespell VampirismExtraSunDamage15
+		if ( VampireLevel >= 5)
+;			Won't be added again if PC already has it, this function will just return 0 https://cs.uesp.net/wiki/AddSpell
+			Player.addspell VampMetabolicAcceleratorSpell
 		endif
 
 		if ( VampireLevel >= 16 )
 			Player.addspell VampireCreatureThrallLevel16
-
-;			Won't be added again if PC already has ityy, this function will just return 0 https://cs.uesp.net/wiki/AddSpell
 			Player.addspell VampireTransparencyLevel10
 		endif
 
@@ -621,7 +617,7 @@ elseif ( PCVampire == 4 )
 		Player.removespell VampirismExtraSunDamage9
 		Player.removespell VampirismExtraSunDamage12
 ;		TEST
-		Player.removespell VampMetabolicAcceleratorSpell
+;		Player.removespell VampMetabolicAcceleratorSpell
 ;		TESTEND
 		Player.removespell VampireSeduction
 
