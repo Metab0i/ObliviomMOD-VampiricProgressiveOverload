@@ -31,8 +31,11 @@ Oblivion(Remastered) Vampirism System Re-Imagined
 | Vampire50AbsorptionLevel20 | Vampiric Absorption | Absorb Health 150pts, Absorb Fatigue 150pts | Level 20 | 50 |
 | Vampire75AbsorptionLevel20 | Vampiric Absorption | Absorb Health 200pts, Absorb Fatigue 200pts | Level 20 | 75 |
 | Vampire100AbsorptionLevel20 | Vampiric Absorption | Absorb Health 250pts, Absorb Fatigue 250pts | Level 20 | 100 |
+| VampireCreatureThrallLevel16 | Creature Thrall | Dominate Creature Level 65 for 60 seconds | Level 16 | 25,50 |
+| VampireHumanoidThrallLevel20 | Humanoid Thrall | Dominate Humanoid Level 65 for 60 seconds | Level 20 | 25 |
 | VampireTransparencyLevel10 | Subtle Persence | Chameleon 65%, Speed 35pts, Sneak 15pts | Level 16 | 25,50,75,100 |
 | VampMetabolicAcceleratorSpell | Undead Metabolic Acceleration | Allows PC to immediately get to stage 4 Vampirism | Level 9 | 25,50,75,100 |
+| Vampire Seduction | Vampire's Seduction | Charm 50 increased to 90 | Level 0 | 25,50,75.100 |
 
 ### Undead Metabolic Acceleration
 
@@ -234,8 +237,4 @@ elseif ( VampireLevel == 20 )
 ## TODO
 * When Undead Metabolic Acceleration is cast at stage 4 vampirism, to make things VERY interesting, it just kills you, lol
 * Make sure that everything is handled and removed properly once vampirism is cured
-* Powers 
-  * Add at proper levels and stages, ref the doc
-* Sun Damage
-  * At stages 75 and 100, check level and add corresponding sun damage
 * Add new Dreams

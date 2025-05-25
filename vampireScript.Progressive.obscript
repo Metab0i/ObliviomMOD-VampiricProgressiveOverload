@@ -474,25 +474,39 @@ If ( PCVampire >= 1 )
 		Player.removespell Vampirism100Skills
 		Player.removespell VampireEmbraceofShadows
 
-;		re-add state 1 spells
+;		re-add stage 1 spells
 		Player.addspell Vampirism25
 		Player.addspell Vampirism25Att
 		Player.addspell Vampirism25Skills
 		set LastFedVampDay to GameDay
 		set LastFedVampHour to GameHour
 
-;		ProgressiveVampirism: Stage1 Powers/Spells
+;		VampiricProgressiveOverload: Stage1 Powers/Spells
 
-;		Should have an if statement eventually checking VampireLevel, for now this is a test
-		Player.addspell VampMetabolicAcceleratorSpell
-		Player.addspell VampireTransparencyLevel10
-		Player.addspell Vampire50AbsorptionLevel20
-		Player.addspell Vampire75AbsorptionLevel20
-		Player.addspell Vampire100AbsorptionLevel20
+		if ( VampireLevel >= 9 )
+;			Won't be added again if PC already has it, this function will just return 0 https://cs.uesp.net/wiki/AddSpell
+			Player.addspell VampMetabolicAcceleratorSpell
 
-;		Remove all sun-damage
+;			Remove all sun-damage
+			Player.removespell VampirismExtraSunDamage3
+			Player.removespell VampirismExtraSunDamage6
+			Player.removespell VampirismExtraSunDamage9
+			Player.removespell VampirismExtraSunDamage12
+			Player.removespell VampirismExtraSunDamage15
+		endif
 
-;		ProgressiveVampirism: Stage1 Powers/Spells END
+		if ( VampireLevel >= 16 )
+			Player.addspell VampireCreatureThrallLevel16
+
+;			Won't be added again if PC already has ityy, this function will just return 0 https://cs.uesp.net/wiki/AddSpell
+			Player.addspell VampireTransparencyLevel10
+		endif
+
+		if ( VampireLevel == 20)
+			Player.addspell VampireHumanoidThrallLevel20
+		endif
+
+;		VampiricProgressiveOverload: Stage1 Powers/Spells END
 
 		if showyouarefed == 1
 			MessageBox "Your hunger for blood has been satisfied... for now."
@@ -531,6 +545,19 @@ if ( PCVampire == 2 )
 		Player.addspell Vampirism50Att
 		Player.addspell Vampirism50Skills
 		Player.addspell VampireSeduction
+
+;		VampiricProgressiveOverload Spells START
+
+		if ( VampireLevel == 20 )
+			Player.removespell VampireHumanoidThrallLevel20
+			Player.addspell Vampire50AbsorptionLevel20
+		endif
+
+;		VampireCreatureThrallLevel16 would be added in Stage1, and it's the only stage through which it's possible to get to this stage, hence making it unnecessary to add it
+
+;		VampiricProgressiveOverload Spells END
+
+
 		set randomdream to GetRandomPercent
 	endif
 elseif ( PCVampire == 3 )
@@ -543,9 +570,33 @@ elseif ( PCVampire == 3 )
 		Player.addspell Vampirism75Skills
 		Player.addspell VampireReignofTerror
 
-;		Sun Damage
-;			Check Level
-;				Set Sun Damage based on level
+		if ( VampireLevel == 20 )
+
+		endif
+
+;		VampiricProgressiveOverload - Sun Damage & Spells START
+
+		Player.removespell VampireHumanoidThrallLevel20
+
+		if ( VampireLevel >= 9)
+			if ( VampireLevel < 16)
+				if ( VampireLevel >= 12 )
+					Player.addspell VampirismExtraSunDamage6
+				else
+					Player.addspell VampirismExtraSunDamage3
+				endif
+			else
+				if ( VampireLevel < 20)
+					Player.addspell VampirismExtraSunDamage9
+				else
+					Player.addspell VampirismExtraSunDamage12
+					Player.addspell Vampire75AbsorptionLevel20
+				endif
+			endif
+		endif
+
+;		VampiricProgressiveOverload - Sun Damage & Spells END 
+
 
 		set randomdream to GetRandomPercent
 	endif
@@ -559,13 +610,30 @@ elseif ( PCVampire == 4 )
 		Player.addspell Vampirism100Skills
 		Player.addspell VampireEmbraceofShadows
 
-;		TEST
-		Player.removespell VampMetabolicAcceleratorSpell
-;		TEST-END
+;		VampiricProgressiveOverload - Sun Damage & Spells START 
 
-;		Sun Damage
-;			Check Level
-;				Set Sun Damage based on level 
+		Player.removespell VampireHumanoidThrallLevel20
+		Player.removespell VampireCreatureThrallLevel16
+		Player.removespell Vampire75AbsorptionLevel20
+		Player.removespell VampirismExtraSunDamage3
+		Player.removespell VampirismExtraSunDamage6
+		Player.removespell VampirismExtraSunDamage9
+		Player.removespell VampirismExtraSunDamage12
+
+		if ( VampireLevel >= 9)
+			if ( VampireLevel < 16)
+				Player.addspell VampirismExtraSunDamage9
+			else
+				if ( VampireLevel < 20)
+					Player.addspell VampirismExtraSunDamage12
+				else
+					Player.addspell VampirismExtraSunDamage15
+					Player.addspell Vampire100AbsorptionLevel20
+				endif
+			endif
+		endif
+
+;		VampiricProgressiveOverload - Sun Damage & Spells END 
 
 		if ( VampMetabolicAcceleratorCasted == 0 )
 			set randomdream to GetRandomPercent	
