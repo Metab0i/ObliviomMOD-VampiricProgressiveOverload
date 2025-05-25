@@ -482,10 +482,14 @@ If ( PCVampire >= 1 )
 		set LastFedVampHour to GameHour
 
 ;		VampiricProgressiveOverload: Stage1 Powers/Spells
+;		TEST
+		Player.addspell VampMetabolicAcceleratorSpell
+;		TESTEND
+		Player.addspell VampireSeduction
 
 		if ( VampireLevel >= 9 )
 ;			Won't be added again if PC already has it, this function will just return 0 https://cs.uesp.net/wiki/AddSpell
-			Player.addspell VampMetabolicAcceleratorSpell
+;			Player.addspell VampMetabolicAcceleratorSpell
 
 ;			Remove all sun-damage
 			Player.removespell VampirismExtraSunDamage3
@@ -570,13 +574,10 @@ elseif ( PCVampire == 3 )
 		Player.addspell Vampirism75Skills
 		Player.addspell VampireReignofTerror
 
-		if ( VampireLevel == 20 )
-
-		endif
-
 ;		VampiricProgressiveOverload - Sun Damage & Spells START
 
 		Player.removespell VampireHumanoidThrallLevel20
+		Player.removespell VampireSeduction
 
 		if ( VampireLevel >= 9)
 			if ( VampireLevel < 16)
@@ -619,6 +620,10 @@ elseif ( PCVampire == 4 )
 		Player.removespell VampirismExtraSunDamage6
 		Player.removespell VampirismExtraSunDamage9
 		Player.removespell VampirismExtraSunDamage12
+;		TEST
+		Player.removespell VampMetabolicAcceleratorSpell
+;		TESTEND
+		Player.removespell VampireSeduction
 
 		if ( VampireLevel >= 9)
 			if ( VampireLevel < 16)

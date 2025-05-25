@@ -35,7 +35,7 @@ Oblivion(Remastered) Vampirism System Re-Imagined
 | VampireHumanoidThrallLevel20 | Humanoid Thrall | Dominate Humanoid Level 65 for 60 seconds | Level 20 | 25 |
 | VampireTransparencyLevel10 | Subtle Persence | Chameleon 65%, Speed 35pts, Sneak 15pts | Level 16 | 25,50,75,100 |
 | VampMetabolicAcceleratorSpell | Undead Metabolic Acceleration | Allows PC to immediately get to stage 4 Vampirism | Level 9 | 25,50,75,100 |
-| Vampire Seduction | Vampire's Seduction | Charm 50 increased to 90 | Level 0 | 25,50,75.100 |
+| VampireSeduction | Vampire's Seduction | Charm 50 increased to 90 | Level 0 | Available at 25,50; No longer Available at 75,100 |
 
 ### Undead Metabolic Acceleration
 
