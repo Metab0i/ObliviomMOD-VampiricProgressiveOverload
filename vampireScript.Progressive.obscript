@@ -34,6 +34,58 @@ endif
 ;If player has been cured of disease, reset 'hasdisease' var
 if ( hasdisease == 1 )
 	if ( Player.IsSpellTarget VampDisease == 0 )
+;		remove all possible VampiricProgressiveOverload effects and spells
+		Player.removespell Vampire100AbsorptionLevel20
+		Player.removespell Vampire75AbsorptionLevel20
+		Player.removespell Vampire50AbsorptionLevel20
+		Player.removespell VampireCreatureThrallLevel16
+		Player.removespell VampireHumanoidThrallLevel20
+		Player.removespell VampireTransparencyLevel10
+		Player.removespell VampMetabolicAcceleratorSpell
+
+		Player.removespell VampireMetabolicCannibalismDeath
+		Player.removespell VampirismExtraAttLevel2
+		Player.removespell VampirismExtraAttLevel4
+		Player.removespell VampirismExtraAttLevel6
+		Player.removespell VampirismExtraAttLevel8
+		Player.removespell VampirismExtraAttLevel9
+		Player.removespell VampirismExtraAttLevel10
+		Player.removespell VampirismExtraAttLevel12
+		Player.removeSpell VampirismExtraAttLevel14
+		Player.removeSpell VampirismExtraAttLevel16
+		Player.removeSpell VampirismExtraAttLevel18
+		Player.removeSpell VampirismExtraAttLevel20
+
+		Player.removespell VampirismExtraSkillsLevel1
+		Player.removespell VampirismExtraSkillsLevel3
+		Player.removespell VampirismExtraSkillsLevel5
+		Player.removespell VampirismExtraSkillsLevel7
+		Player.removespell VampirismExtraSkillsLevel9
+		Player.removespell VampirismExtraSkillsLevel11
+		Player.removespell VampirismExtraSkillsLevel13
+		Player.removespell VampirismExtraSkillsLevel15
+		Player.removespell VampirismExtraSkillsLevel16
+		Player.removespell VampirismExtraSkillsLevel17
+		Player.removespell VampirismExtraSkillsLevel19
+		Player.removespell VampirismExtraSkillsLevel20
+		
+		Player.removespell VampirismExtraWR1
+		Player.removespell VampirismExtraWR2
+		Player.removespell VampirismExtraWR3
+		Player.removespell VampirismExtraWR4
+		Player.removespell VampirismExtraWR5
+		Player.removespell VampirismExtraWR6
+		Player.removespell VampirismExtraWR7
+		Player.removespell VampirismExtraWR8
+		Player.removespell VampirismExtraWR9
+		Player.removespell VampirismExtraWR10
+
+		Player.removespell VampirismExtraSunDamage3
+		Player.removespell VampirismExtraSunDamage6
+		Player.removespell VampirismExtraSunDamage9
+		Player.removespell VampirismExtraSunDamage12
+		Player.removespell VampirismExtraSunDamage15
+
 		set hasdisease to 0
 	endif
 endif

@@ -244,5 +244,4 @@ elseif ( VampireLevel == 20 )
 
 
 ## TODO
-* Make sure that everything is handled and removed properly once vampirism is cured
 * Add new Dreams
