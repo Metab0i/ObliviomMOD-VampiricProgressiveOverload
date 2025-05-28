@@ -5,6 +5,9 @@ Oblivion(Remastered) Vampirism System Re-Imagined
 - Power: Spell that can be cast once a day
 - PC: Player Character
 
+## Requirements
+* Oblivion Base Game (Works for Both Remastered and Vanila)
+
 ## Mechanic Overview 
 
 \~ Each feeding from **'Stage 4'** vampirism back to **'Stage 1'** increments **`VampireLevel`** by 1   
@@ -22,6 +25,8 @@ Oblivion(Remastered) Vampirism System Re-Imagined
 \~ Adds new Powers as PC levels up their Vampire
 
 \~ Adds a new mechanic of "*Undead Metabolic Acceleration*". Read further for more details
+
+\~ Adds a new mechanic of "*Daywalker Skin*". Read further for more details
 
 
 ## Spell -> Power
