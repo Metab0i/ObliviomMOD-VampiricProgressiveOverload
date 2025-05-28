@@ -50,13 +50,15 @@ I see a lot of people wanting a "Sun Resistence/Protection" of some sort for the
 
 ## Changes to CS Properties Vampirism25-100
 
+### Vampirism25-100 changes
+
 | Effects | Vampirism 25 | Vampirism 50 | Vampirism 75 | Vampirism 100 | Reasoning |
 | :---: | :---: | :---: | :---: | :---: | :--- |
 | Resist Frost | 10 | 20 | 30 | 40 | To balance out weakness to fire, but not 1-to-1. Frost resistance is 10pts less than Fire Weakness |
 Absorb Spell | -/- | -/- | -/- | 10 | "Seemingly insatiable and desperate hunger reflecting in one's being". Or in other words - just makes stage 4 vampirism a bit more interesting. |
 
 
-## Vampirism 25-100 Attribute changes
+### Vampirism25-100Att changes
 
 | Attribute | Vampirism 25 | Vampirism 50 | Vampirism 75 | Vampirism 100 | Reasoning |
 | :---: | :---: | :---: | :---: | :---: | :--- |
@@ -65,13 +67,17 @@ Absorb Spell | -/- | -/- | -/- | 10 | "Seemingly insatiable and desperate hunger
 | Personality | 15 | 8 | 0 | -8 | As Vampire becomes primal, their Personality, in my opinion, shouldn't just return to baseline but get drained. |
 
 
-## Vampirism 25-100 Skill changes
+### Vampirism25-100Skill changes
 
 | Skill | Vampirism 25 | Vampirism 50 | Vampirism 75 | Vampirism 100 | Reasoning |
 | :---: | :---: | :---: | :---: | :---: | :--- |
 | Mercantile | 15 | 10 | 5 | 0 | As mentioned previously, Cyrodiil Vampire's primary innate advtange is social. It made sense to me that "Mercantile" skill should go up at fully-fed stage and decrease back to baseline at most primal stage. |
 | Speechcraft | 15 | 10 | 5 | 0 | Same reasoning as for "Mercantile". |
 | Waterbreathing | Available | Available | Available | Available| Cyrodiil Vampires, and Vampires in general TES lore, are considered undead. It made sense to me that breathing is of little concern to the undead. |
+
+### New CS `Spell -> Abilities` Entries: Vampirism50-100NoSunDamage
+Identical to `Vampirism50-100` apart from a missing `Sun Damage` effect. For more details on how exactly it works, check `vampSunScreen.obscript`.
+
 
 # Level Up Mechanics
 
