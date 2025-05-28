@@ -6,7 +6,7 @@ Oblivion(Remastered) Vampirism System Re-Imagined
 - PC: Player Character
 
 ## Requirements
-* Oblivion Base Game (Works for Both Remastered and Vanila)
+* Oblivion Remastered Base Game
 
 ## Mechanic Overview 
 
