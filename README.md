@@ -34,6 +34,7 @@ Oblivion(Remastered) Vampirism System Re-Imagined
 | VampireCreatureThrallLevel16 | Creature Thrall | Dominate Creature 65pts for 60 seconds | Level 16 | 25,50 |
 | VampireHumanoidThrallLevel20 | Humanoid Thrall | Dominate Humanoid 65pts for 60 seconds | Level 20 | 25 |
 | VampireTransparencyLevel10 | Subtle Persence | Chameleon 65%, Speed 35pts, Sneak 15pts | Level 16 | 25,50,75,100 |
+| VampireSunScreen | Daywalker Skin | No Sun Damage for 225 seconds, once a day | Level 16 | 75,100 |
 | VampMetabolicAcceleratorSpell | Undead Metabolic Acceleration | Allows PC to immediately get to stage 4 Vampirism | Level 5 | 25,50,75,100 |
 | VampireSeduction | Vampire's Seduction | Charm 50 increased to 90 | Level 0 | Available at 25,50; No longer Available at 75,100 |
 | VampireReignofTerror | Reign of Terror | Demoralize 25 increased to 60; Silence - Area 20pts | Level 0 | 100 |
@@ -42,6 +43,10 @@ Oblivion(Remastered) Vampirism System Re-Imagined
 
 This mechanic provides player with a way of reaching Stage 4 Vampirism, and associated benefits, in a spell-cast.    
 In vanila - players had to wait for up to 96 seconds to reach stage 4 vampirism. In my opinion, it disrupted the pace of the game, so I thought of a lore-friendly QoL mechanic to aleviate this.    
+
+### Daywalker Skin
+
+I see a lot of people wanting a "Sun Resistence/Protection" of some sort for their Vampires. I don't like overpowered mechanics, such as a ring or a piece of clothing, because they are boring; so I tried to think of an interesting and balanced solution to said demand. This implementation relies on removing Sun Damage for the duration of the spell, and then adding it back again once the spell is over. It's a power spell, so this mechanic is available once a day, but it's for a relatively significant amount of time - 225 seconds.
 
 ## Changes to CS Properties Vampirism25-100
 

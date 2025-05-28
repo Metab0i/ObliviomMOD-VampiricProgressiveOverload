@@ -536,6 +536,7 @@ If ( PCVampire >= 1 )
 ;		VampiricProgressiveOverload: Stage1 Powers/Spells
 
 		Player.addspell VampireSeduction
+		Player.removespell VampSunScreenSpell;	
 
 ;		Remove all sun-damage
 		Player.removespell VampirismExtraSunDamage3
@@ -636,8 +637,10 @@ elseif ( PCVampire == 3 )
 				endif
 			else
 				if ( VampireLevel < 20)
+					Player.addspell VampSunScreenSpell	
 					Player.addspell VampirismExtraSunDamage9
 				else
+					Player.addspell VampSunScreenSpell	
 					Player.addspell VampirismExtraSunDamage12
 					Player.addspell Vampire75AbsorptionLevel20
 				endif
@@ -668,9 +671,6 @@ elseif ( PCVampire == 4 )
 		Player.removespell VampirismExtraSunDamage6
 		Player.removespell VampirismExtraSunDamage9
 		Player.removespell VampirismExtraSunDamage12
-;		TEST
-;		Player.removespell VampMetabolicAcceleratorSpell
-;		TESTEND
 		Player.removespell VampireSeduction
 
 		if ( VampireLevel >= 9)
@@ -678,8 +678,10 @@ elseif ( PCVampire == 4 )
 				Player.addspell VampirismExtraSunDamage9
 			else
 				if ( VampireLevel < 20)
+					Player.addspell VampSunScreenSpell	
 					Player.addspell VampirismExtraSunDamage12
 				else
+					Player.addspell VampSunScreenSpell	
 					Player.addspell VampirismExtraSunDamage15
 					Player.addspell Vampire100AbsorptionLevel20
 				endif

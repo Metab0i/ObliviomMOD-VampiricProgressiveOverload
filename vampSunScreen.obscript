@@ -1,0 +1,70 @@
+scriptname VampSunScreen 
+
+Begin ScriptEffectStart
+    Player.removespell Vampirism50
+    Player.removespell Vampirism75
+    Player.removespell Vampirism100
+
+    Player.removespell VampirismExtraSunDamage3
+    Player.removespell VampirismExtraSunDamage6
+    Player.removespell VampirismExtraSunDamage9
+    Player.removespell VampirismExtraSunDamage12
+    Player.removespell VampirismExtraSunDamage15
+
+    if ( PCVampire == 2 )
+        Player.addspell Vampirism50NoSunDamage
+    elseif ( PCVampire == 3 )
+        Player.addspell Vampirism75NoSunDamage
+    elseif ( PCVampire == 4 )
+        Player.addspell Vampirism100NoSunDamage
+    endif
+End
+
+Begin ScriptEffectUpdate
+;   Nothing to do during
+End
+
+Begin ScriptEffectFinish
+    Player.removespell Vampirism50NoSunDamage
+    Player.removespell Vampirism75NoSunDamage
+    Player.removespell Vampirism100NoSunDamage
+
+    if ( PCVampire == 2 )
+        Player.addspell Vampirism50
+
+    elseif ( PCVampire == 3 )
+		if ( VampireLevel >= 9)
+			if ( VampireLevel < 16)
+				if ( VampireLevel >= 12 )
+					Player.addspell VampirismExtraSunDamage6
+				else
+					Player.addspell VampirismExtraSunDamage3
+				endif
+			else
+				if ( VampireLevel < 20)
+					Player.addspell VampirismExtraSunDamage9
+				else
+					Player.addspell VampirismExtraSunDamage12
+				endif
+			endif
+		endif
+
+        Player.addspell Vampirism75
+
+    elseif ( PCVampire == 4 )
+		if ( VampireLevel >= 9)
+			if ( VampireLevel < 16)
+				Player.addspell VampirismExtraSunDamage9
+			else
+				if ( VampireLevel < 20)
+					Player.addspell VampirismExtraSunDamage12
+				else
+					Player.addspell VampirismExtraSunDamage15
+				endif
+			endif
+		endif
+
+        Player.addspell Vampirism100
+
+    endif
+End
