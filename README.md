@@ -36,8 +36,8 @@ Oblivion(Remastered) Vampirism System Re-Imagined
 | Vampire50AbsorptionLevel20 | Vampiric Absorption | Absorb Health 150pts, Absorb Fatigue 150pts | Level 20 | 50 |
 | Vampire75AbsorptionLevel20 | Vampiric Absorption | Absorb Health 200pts, Absorb Fatigue 200pts | Level 20 | 75 |
 | Vampire100AbsorptionLevel20 | Vampiric Absorption | Absorb Health 250pts, Absorb Fatigue 250pts | Level 20 | 100 |
-| VampireCreatureThrallLevel16 | Creature Thrall | Dominate Creature 65pts for 60 seconds | Level 16 | 25,50 |
 | VampireHumanoidThrallLevel20 | Humanoid Thrall | Dominate Humanoid 65pts for 60 seconds | Level 20 | 25 |
+| VampireCreatureThrallLevel16 | Creature Thrall | Dominate Creature 65pts for 60 seconds | Level 16 | 25,50 |
 | VampireTransparencyLevel10 | Subtle Persence | Chameleon 65%, Speed 35pts, Sneak 15pts | Level 16 | 25,50,75,100 |
 | VampireSunScreen | Daywalker Skin | No Sun Damage for 225 seconds, once a day | Level 16 | 75,100 |
 | VampMetabolicAcceleratorSpell | Undead Metabolic Acceleration | Allows PC to immediately get to stage 4 Vampirism | Level 5 | 25,50,75,100 |
