@@ -29,7 +29,7 @@ Oblivion(Remastered) Vampirism System Re-Imagined
 \~ Adds a new mechanic of "*Daywalker Skin*". Read further for more details
 
 
-## Spell -> Power
+## Powers
 
 | CS-Power Name | In-Game Name | Effect | Available at Level | Available at Vampirism Stage |
 | :---: | :---: | :---: | :---: | :---: |

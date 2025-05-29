@@ -636,7 +636,7 @@ elseif ( PCVampire == 3 )
 					Player.addspell VampirismExtraSunDamage3
 				endif
 			else
-				if ( VampireLevel < 20)
+				if ( VampireLevel < 20 )
 					Player.addspell VampSunScreenSpell	
 					Player.addspell VampirismExtraSunDamage9
 				else
@@ -677,7 +677,7 @@ elseif ( PCVampire == 4 )
 			if ( VampireLevel < 16)
 				Player.addspell VampirismExtraSunDamage9
 			else
-				if ( VampireLevel < 20)
+				if ( VampireLevel < 20 )
 					Player.addspell VampSunScreenSpell	
 					Player.addspell VampirismExtraSunDamage12
 				else
