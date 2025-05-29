@@ -8,7 +8,7 @@ Oblivion(Remastered) Vampirism System Re-Imagined
 ## Requirements
 * Oblivion Remastered Base Game
 
-## Mechanic Overview 
+## Mechanics Overview 
 
 \~ Each feeding from **'Stage 4'** vampirism back to **'Stage 1'** increments **`VampireLevel`** by 1   
 

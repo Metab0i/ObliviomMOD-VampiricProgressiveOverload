@@ -1,0 +1,216 @@
+Oblivion(Remastered) Vampirism System Re-Imagined
+
+[size=5]Glossary[/size]
+
+[list]
+[*]CS: Construction Set
+[*]Power: Spell that can be cast once a day
+[*]PC: Player Character
+[/list]
+[size=5]Mechanics Overview[/size]
+
+~ Each feeding from [b]'Stage 4'[/b] vampirism back to [b]'Stage 1'[/b] increments [b][font=Courier New]VampireLevel[/font][/b] by 1
+
+~ A total of [b]20 levels[/b]
+
+~ [b]Each Level[/b] [i]amplifies[/i] specific Attributes and Skills, as well as provides additional effects
+
+~ Adds [i]Water Breathing[/i] at all Stages of Vampirism
+
+~ Adds 10pts Spell Absorption at Stage 4 Vampirism. Read further for more details
+
+~ Adds new skills, attributes, and effects to Vampiric Hunger stages. Read further for more details
+
+~ Adds new Powers as PC levels up their Vampire
+
+~ Adds a new mechanic of "[i]Undead Metabolic Acceleration[/i]". Read further for more details
+
+~ Adds a new mechanic of "[i]Daywalker Skin[/i]". Read further for more details
+
+[size=5]Powers[/size]
+[img]https://i.imgur.com/1dayNI8.png[/img]
+
+[size=4]Undead Metabolic Acceleration[/size]
+
+This mechanic provides player with a way of reaching Stage 4 Vampirism, and associated benefits, in a spell-cast.
+
+In vanila - players had to wait for up to 96 seconds to reach stage 4 vampirism. In my opinion, it disrupted the pace of the game, so I thought of a lore-friendly QoL mechanic to aleviate this.
+
+[size=4]Daywalker Skin[/size]
+
+I see a lot of people wanting a "Sun Resistence/Protection" of some sort for their Vampires. I don't like overpowered mechanics, such as a ring or a piece of clothing, because they are boring; so I tried to think of an interesting and balanced solution to said demand. This implementation relies on removing Sun Damage for the duration of the spell, and then adding it back again once the spell is over. It's a power spell, so this mechanic is available once a day, but it's for a relatively significant amount of time - 225 seconds.
+
+[size=5]Changes to CS Properties Vampirism25-100[/size]
+
+[size=4]Vampirism25-100 changes
+[img]https://i.imgur.com/YRuVE3H.png[/img]
+
+[/size][size=4]Vampirism25-100Att changes[/size]
+[font=Courier][img]https://i.imgur.com/bAn80Lp.png[/img]
+[/font]
+
+[size=4]Vampirism25-100Skill changes[/size]
+[font=Courier][img]https://i.imgur.com/MfI7oBU.png[/img]
+[/font]
+
+[size=4]New CS [font=Courier New]Spell -> Abilities[/font] Entries: Vampirism50-100NoSunDamage[/size]
+
+Identical to [font=Courier New]Vampirism50-100[/font] apart from a missing [font=Courier New]Sun Damage[/font] effect. For more details on how exactly it works, check [font=Courier New]vampSunScreen.obscript[/font].
+
+[size=6]Level Up Mechanics[/size]
+
+[size=5]Level-Up Mechanic: Additional Sun Damage[/size]
+
+CS Spell Name - [font=Courier New]VampirismExtraSunDamage[DMGVALUE][/font] [i](From Lvl 10 to 20)[/i]
+[font=Courier][img]https://i.imgur.com/ZWO8HVu.png[/img][/font]
+
+It made sense to me that as Vampire progresses and becomes [i]more[/i] of a Vampire, they'd get more Sun-Damage. Keeps things interesting.
+[img]https://i.imgur.com/ST0EU6L.png[/img]
+
+[size=5]Level-Up Mechanic: Additional Normal Weapons Resistance[/size]
+
+CS Spell Name - [font=Courier New]VampirismExtraWR[1-10][/font]
+
+Vampire Character would gain +1 [font=Courier New]Resistance to Normal Weapons[/font] every even level until level 20; At level 20 on top +10 [font=Courier New]Resistance to Normal Weapons[/font], PC gains additional +3.
+
+[size=5]Level-Up Mechanic: Attributes[/size]
+
+CS Spell Name - [font=Courier New]VampirismExtraAttLevel[2-20][/font]
+[quote][i]Increments to various degrees at every even level[/i][/quote]
+[list]
+[*][font=Courier New]Fortify Strength[/font] = Magnitude: 1–12
+[*][font=Courier New]Fortify Willpower[/font] = Magnitude: 1–10
+[*][font=Courier New]Fortify Speed[/font] = Magnitude: 1–9
+[*][font=Courier New]Fortify Agility[/font] = Magnitude: 1–12
+[/list]
+[size=5]Level-Up Mechanic: Skills[/size]
+
+CS Spell Name - [font=Courier New]VampirismExtraSkillsLevel[1-19][/font]
+[quote][i]Increments to various degrees at every odd level[/i][/quote]
+
+[list]
+[*][font=Courier New]Fortify Acrobatics[/font] = Magnitude: 1–15
+[*][font=Courier New]Fortify Athletics[/font] = Magnitude: 1–15
+[*][font=Courier New]Fortify Destruction[/font] = Magnitude: 1–12
+[*][font=Courier New]Fortify Hand-to-Hand[/font] = Magnitude: 1–15
+[*][font=Courier New]Fortify Illusion[/font] = Magnitude: 1–13
+[*][font=Courier New]Fortify Mysticism[/font] = Magnitude: 1–12
+[*][font=Courier New]Fortify Sneak[/font] = Magnitude: 1–13
+[/list]
+[size=6]Vampire Ranks[/size]
+
+[list]
+[*][b]Fledgling Vampire:[/b] Vamp Level 1–8
+[*][b]Callous Vampire:[/b] Vamp Level 9–15
+[*][b]Harrowing Vampire:[/b] Vamp Level 16–19
+[*][b]Master Vampire:[/b] Vamp Level 20
+[/list]
+[size=5]Fledgling Vampire (1–8)[/size]
+
+[list]
+[*][font=Courier New]VampirismExtraAttLevel[/font][2, 4, 6, 8]
+[*][font=Courier New]VampirismExtraSkillsLevel[/font][1, 3, 5, 7]
+[*][font=Courier New]VampirismExtraWR[/font][1, 2, 3, 4]
+[/list]
+[size=5]Callous Vampire (9–15)[/size]
+
+[list]
+[*][font=Courier New]VampirismExtraAttLevel[/font][10, 12, 14]
+[*][font=Courier New]VampirismExtraSkillsLevel[/font][9, 11, 13]
+[*][font=Courier New]VampirismExtraWR[/font][5, 6, 7]
+[*][font=Courier New]VampirismExtraSunDamage[/font]:
+[list]
+[*]Vamp75 = 3, 6
+[*]Vamp100 = 9
+[/list][/list]
+[size=5]Harrowing Vampire (16–19)[/size]
+
+[list]
+[*][font=Courier New]VampirismExtraAttLevel[/font][16, 18]
+[*][font=Courier New]VampirismExtraSkillsLevel[/font][15, 17]
+[*][font=Courier New]VampirismExtraWR[/font][8, 9]
+[*][font=Courier New]VampirismExtraSunDamage[/font]:
+[list]
+[*]Vamp75 = 9
+[*]Vamp100 = 12
+[/list][/list]
+[size=5]Master Vampire (20)[/size]
+
+[list]
+[*][font=Courier New]VampirismExtraAttLevel[/font][20]
+[*][font=Courier New]VampirismExtraSkillsLevel[/font][19]
+[*][font=Courier New]VampirismExtraWR[/font][10 + 3]
+[*][font=Courier New]VampirismExtraSunDamage[/font]:
+[list]
+[*]Vamp75 = 12
+[*]Vamp100 = 15
+[/list][/list]
+[size=5]Globals[/size]
+[img]https://i.imgur.com/aCTq1CW.png[/img]
+
+[size=5]Level-Up Messages[/size]
+**(WARNING: SPOILERS)**
+
+[i]
+[spoiler]
+if ( VampireLevel == 1 )
+"You can feel yourself change.. As a result of enduring starvation, you grew stronger. You are now Fledgling Vampire."
+
+elseif ( VampireLevel == 2 )
+"Your power grows.."
+
+elseif ( VampireLevel == 3 )
+"You can feel yourself growing stronger..",
+
+elseif ( VampireLevel == 4 )
+"With each drink, you get stronger.."
+
+elseif ( VampireLevel == 5 )
+"You can feel yourself developing into something more, attaining greater control over your condition.."
+
+elseif ( VampireLevel == 6 )
+"Greater power is coursing through you now.."
+
+elseif ( VampireLevel == 7 )
+"Something greater faintly stirs in you.."
+
+elseif ( VampireLevel == 8 )
+"Violation of others in their most vulnerable allowed you to ascend further. You are now Callous Vampire."
+
+elseif ( VampireLevel == 9 )
+"Hunger is satiatied, but not your ambition.."
+
+elseif ( VampireLevel == 10 )
+"Blood of another flows into you, nourishing your growth.."
+
+elseif ( VampireLevel == 11 )
+"Faster, Stronger, More.."
+
+elseif ( VampireLevel == 12 )
+"You can feel blood of another pouring through to your viscera, feeding your strength.."
+
+elseif ( VampireLevel == 13 )
+"Sweet flavours of blood are melting all over your tongue, coating your mouth, filling you with strength.."
+
+elseif ( VampireLevel == 14 )
+"A step closer to fulfilling your desire for more power.."
+
+elseif ( VampireLevel == 15 )
+"You have become intimately familiar with power that comes from your condition. Blood of your victims nourished you and crystallized lessons you had learned in battle; However, there's more to become. You are now Harrowing Vampire."
+
+elseif ( VampireLevel == 16 )
+"Blood fuels your change.."
+
+elseif ( VampireLevel == 17 )
+"Stolen essense of another fulfills you.."
+
+elseif ( VampireLevel == 18 )
+"Starvation, hunt, and subsequent success.."
+
+elseif ( VampireLevel == 19 )
+"It's within your reach.."
+
+elseif ( VampireLevel == 20 )
+"Vampirism is instinctive to you, it's as if you were born as such. Being anything else is a vague, distant sensation now. You've attained mastery over your condition. Many have been slain by your hands and fangs, and you briefly ponder your entire journey on the way here. However, blood-stained sweet memories are interrupted by a subtle growing sensation.. of hunger. Hunger as undying as you. You are now Master Vampire."
+[/spoiler]
+[/i]
