@@ -662,6 +662,10 @@ elseif ( PCVampire == 4 )
 		Player.addspell Vampirism100Skills
 		Player.addspell VampireEmbraceofShadows
 
+		if ( VampMetabolicAcceleratorCasted == 1)
+			Player.addspell VampireReignofTerror
+		endif
+
 ;		VampiricProgressiveOverload - Sun Damage & Spells START 
 
 		Player.removespell VampireHumanoidThrallLevel20
